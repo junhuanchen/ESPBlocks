@@ -292,7 +292,7 @@ class Editor(tk.Frame):
 
     def blockly_run(self, code):
         print("=== Blockly Code: ===\n{}\n=== END ===".format(code))
-        self.u_serial.run("print('sadasdasd')\n".encode())
+        self.u_serial.run("print('run code')\n".encode())
         self.u_serial.run(code.encode())
 
     def connect(self, device):

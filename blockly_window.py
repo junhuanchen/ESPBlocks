@@ -15,10 +15,14 @@ import os
 
 
 def get_code(webview):
-    webview.page().mainFrame().evaluateJavaScript("showCode();")
+    # print(webview.page())
+    # print(dir(webview.page()))
+    print(webview.page().runJavaScript("alert($(editor)[0].getCode());"))
+    # res = webview.page().mainFrame().evaluateJavaScript()
+    # print(res)
 
-x_size = 900
-y_size = 560
+x_size = 1366
+y_size = 768
 class EditorWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -67,8 +71,8 @@ class BlocklyThread(threading.Thread):
         self.start()
 
     def run(self):
-        url = 'http://marekmansell.sk/test/blockly/'
-        url = 'file://' + os.path.abspath(os.path.join('blockly','index.html'))
+        url = 'http://www.micropython.org.cn/pye/editor-en.html#'
+        # url = 'file://' + os.path.abspath(os.path.join('blockly','index.html'))
         app = QApplication([])
         editor_window = EditorWindow()
 
