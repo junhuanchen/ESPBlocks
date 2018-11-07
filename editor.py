@@ -8,9 +8,9 @@ from PIL import Image, ImageTk # requires installing
 import logging
 import queue
 import os
-import subprocess
 from tkinter import filedialog
 import sys
+import tkinter.messagebox
 
 from pygments import lex
 from pygments.lexers import PythonLexer
@@ -21,7 +21,7 @@ import blockly_window
 # tkinter on scrollbar instead of loo 60ms!!!
 # every single fucking tab!!!!
 
-logging.basicConfig(level=logging.DEBUG,
+logging.basicConfig(level=logging.INFO,
                     format='(%(threadName)-10s) %(message)s',
                     )
 
@@ -393,11 +393,10 @@ class Repl(tk.Frame):
         self.repl_text_field.config(
             height=15,
             yscrollcommand=self.repl_scrollbar.set,
-            # background="black",
-            # foreground="yellow",
-            # insertbackground="white",  # cursor color
+            background="black",
+            foreground="SpringGreen",
+            insertbackground="white",  # cursor color
         )
-
 
         self.repl_text_field.bind("<Key>", self._key_event)
         self.repl_text_field.bind("<Control-a>", self._ctrl_a_event)
@@ -435,23 +434,23 @@ class Repl(tk.Frame):
             return "break" 
 
     def _ctrl_a_event(self, event):
-        self.send_queue.put(chr(1).encode())
+        self.send_queue.put(b'\x01')
         return "break"
 
     def _ctrl_b_event(self, event):
-        self.send_queue.put(chr(2).encode())
+        self.send_queue.put(b'\x02')
         return "break"
 
     def _ctrl_c_event(self, event):
-        self.send_queue.put(chr(3).encode())
+        self.send_queue.put(b'\x03')
         return "break"
 
     def _ctrl_d_event(self, event):
-        self.send_queue.put(chr(4).encode())
+        self.send_queue.put(b'\x04')
         return "break"
 
     def _ctrl_e_event(self, event):
-        self.send_queue.put(chr(5).encode())
+        self.send_queue.put(b'\x05')
         return "break"
 
     def disconnect(self, wait_for_thread_join=True):
@@ -482,7 +481,7 @@ class Toolbar(tk.Frame):
         self._add_separator("separator_2")
         self._add_button("run", "Run", resource_path(os.path.join("img", "run.png")))
         self._add_button("repl", "REPL", resource_path(os.path.join("img", "repl.png")))
-        self._add_button("files", "Storage", resource_path(os.path.join("img", "files.png")))
+        # self._add_button("files", "Storage", resource_path(os.path.join("img", "files.png")))
         self._add_button("device", "Connect", resource_path(os.path.join("img", "device_alert.png")))
         self._load_image(resource_path(os.path.join("img", "device.png")))
         self._add_button("blockly", "Blockly", resource_path(os.path.join("img", "blockly.png")))
@@ -546,8 +545,8 @@ class uSerial(serial.Serial):
 
         self.write(b'\r\x01') # ctrl-A: enter raw REPL
         sleep(.1)
-        self.write(b'\x04') # ctrl-D: soft reset
-        sleep(.5)
+        # self.write(b'\x04') # ctrl-D: soft reset
+        # sleep(.5)
 
     def exit_raw_repl(self):
         self.write(b'\r\x02') # ctrl-B: enter friendly REPL
@@ -609,7 +608,7 @@ class SerialThread(threading.Thread):
                 else:
                     sleep(.01)
             except Exception as e:
-                print("Serial Thread Exception !!!")
+                print("Serial Thread Exception !!!", e)
                 self.isRunning = False
                 self.repl.disconnect(False)
 
@@ -631,6 +630,15 @@ class StatusBar(tk.Frame):
             self.label.config(text="Connected to: {}".format(self.device_name))
 
 class Application(tk.Frame):
+
+    def blockly(self):
+        if "blockly" in self.tool_bar.buttons:
+            self.tool_bar.buttons.pop("blockly")
+            self.editor.blockly()
+        else:
+            if tkinter.messagebox.askyesno('tip', 'Because blockly has a problem, you need to restart the program before you can use it. Do you need to close the current program?'):
+                self.quit()
+
     def __init__(self, root):
         super().__init__(root)
         self.title = "ESPBlocks"
@@ -672,7 +680,8 @@ class Application(tk.Frame):
         self.tool_bar.buttons["load_file"].config(command=self.editor.load_file)
         self.tool_bar.buttons["save_file"].config(command=self.editor.save_file)
         self.tool_bar.buttons["device"].config(command=self.editor.setup_device)
-        self.tool_bar.buttons["blockly"].config(command=self.editor.blockly)
+        # self.tool_bar.buttons["blockly"].config(command=self.editor.blockly)
+        self.tool_bar.buttons["blockly"].config(command=self.blockly)
 
     def update_title(self, device=None):
         if device:
@@ -684,7 +693,6 @@ class Application(tk.Frame):
         if self.editor.repl:
             self.editor.repl.disconnect()
         self.root.destroy()
-
 
 def run():
     root = tk.Tk()

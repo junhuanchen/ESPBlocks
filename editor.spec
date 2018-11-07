@@ -6,7 +6,7 @@ block_cipher = None
 data_files = [("img", "img")]
 
 a = Analysis(['editor.py'],
-             pathex=['/home/marek/Desktop/blockly-master'],
+             pathex=['C:\\Users\\pi\\Documents\\GitHub\\ESPBlocks'],
              binaries=[],
              datas=data_files,
              hiddenimports=[],
@@ -27,5 +27,5 @@ exe = EXE(pyz,
           debug=False,
           strip=False,
           upx=True,
-          console=True,
+          console=False,
           icon="win_icon.ico" )
