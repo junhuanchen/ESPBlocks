@@ -30,12 +30,24 @@ class EditorWindow(QMainWindow):
 
 class WebView(QWebEngineView):
 
+    def clear_button(self):
+        import time
+        while self.not_clear:
+            time.sleep(1)
+            self.page().runJavaScript('$("#command-download").remove();$("#script-name").remove();', self.get_clear_callback)
+
     def bind_event(self, event):
         self._event = event
+        self.not_clear = True
+        # print(res)
 
     def get_code_callback(self, result):
         print(result)
         self._event(result)
+
+    def get_clear_callback(self, result):
+        if result:
+            self.not_clear = False
 
     def get_code(self):
         self.page().runJavaScript("($(editor)[0].getCode());", self.get_code_callback)
@@ -61,9 +73,13 @@ class BlocklyThread(threading.Thread):
 
         browser.resize(x_size-50, y_size)
 
-        url = 'http://www.micropython.org.cn/pye/editor-en.html#'
+        url = 'https://micropython.top/editor-zh-hans.html#'
         browser.load(QUrl(url))
+
         browser.show()
+
+        threading.Thread(target=browser.clear_button).start()
+
         app.exec_()
         # browser.close()
         # browser.destroy()

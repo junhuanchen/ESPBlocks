@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/blockly_window.py" line="56" />
+    <bookmark url="file://$PROJECT_DIR$/blockly_window.py" line="68" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fef572fa-13d6-4f6c-ae7e-f2def4f69efd" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blockly_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/blockly_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/editor.py" beforeDir="false" afterPath="$PROJECT_DIR$/editor.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,13 +18,14 @@
     <session id="-1386833365">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -43,7 +43,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="1053" />
+          <entry key="py" value="1222" />
           <entry key="spec" value="39" />
           <entry key="txt" value="1" />
         </counts>
@@ -51,7 +51,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="40" />
-          <entry key="Python" value="1053" />
+          <entry key="Python" value="1222" />
         </counts>
       </usages-collector>
     </session>
@@ -61,7 +61,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/editor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
+            <state relative-caret-position="13772">
               <caret line="643" column="32" selection-start-line="643" selection-start-column="32" selection-end-line="643" selection-end-column="32" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
@@ -75,12 +75,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blockly_window.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="66" column="19" lean-forward="true" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
+            <state relative-caret-position="104">
+              <caret line="75" column="15" selection-start-line="75" selection-start-column="15" selection-end-line="75" selection-end-column="59" />
               <folding>
                 <element signature="e#24#34#0" expanded="true" />
-                <marker date="1541656391154" expanded="true" signature="770:804" ph="..." />
-                <marker date="1541656391154" expanded="true" signature="1269:1278" ph="..." />
+                <marker date="1541672134185" expanded="true" signature="968:973" ph="..." />
+                <marker date="1541672134185" expanded="true" signature="1001:1086" ph="..." />
+                <marker date="1541672134185" expanded="true" signature="1648:1657" ph="..." />
               </folding>
             </state>
           </provider>
@@ -154,7 +155,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PythonEditor" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -169,7 +170,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.editor">
+  <component name="RunManager" selected="Python.blockly_window">
     <configuration name="blockly_app" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="blockly" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -254,8 +255,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.editor" />
         <item itemvalue="Python.blockly_window" />
+        <item itemvalue="Python.editor" />
         <item itemvalue="Python.blockly_app" />
       </list>
     </recent_temporary>
@@ -277,12 +278,12 @@
     <frame x="-8" y="22" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24580152" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25038168" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4952381" visible="true" weight="0.5097002" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4952381" visible="true" weight="0.5097002" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49682876" weight="0.3993174" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -294,7 +295,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Data View" order="3" />
-      <window_info anchor="right" id="Terminal" order="4" sideWeight="0.49592835" visible="true" weight="0.4648855" />
+      <window_info anchor="right" id="Terminal" order="4" sideWeight="0.49592835" visible="true" weight="0.27328244" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -385,7 +386,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/editor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
+        <state relative-caret-position="13772">
           <caret line="643" column="32" selection-start-line="643" selection-start-column="32" selection-end-line="643" selection-end-column="32" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
@@ -397,12 +398,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/blockly_window.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="66" column="19" lean-forward="true" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
+        <state relative-caret-position="104">
+          <caret line="75" column="15" selection-start-line="75" selection-start-column="15" selection-end-line="75" selection-end-column="59" />
           <folding>
             <element signature="e#24#34#0" expanded="true" />
-            <marker date="1541656391154" expanded="true" signature="770:804" ph="..." />
-            <marker date="1541656391154" expanded="true" signature="1269:1278" ph="..." />
+            <marker date="1541672134185" expanded="true" signature="968:973" ph="..." />
+            <marker date="1541672134185" expanded="true" signature="1001:1086" ph="..." />
+            <marker date="1541672134185" expanded="true" signature="1648:1657" ph="..." />
           </folding>
         </state>
       </provider>
