@@ -10,6 +10,7 @@ import threading
 
 x_size = 1366
 y_size = 768
+
 class EditorWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -64,9 +65,9 @@ class BlocklyThread(threading.Thread):
         browser.load(QUrl(url))
         browser.show()
         app.exec_()
-        browser.close()
-        browser.destroy()
-        editor_window.close()
+        # browser.close()
+        # browser.destroy()
+        # editor_window.close()
 
 if __name__ == "__main__":
     # app = QApplication([])

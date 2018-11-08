@@ -644,7 +644,7 @@ class Application(tk.Frame):
         self.title = "ESPBlocks"
         self.root = root
 
-        root.minsize(500, 500) # main window can not be smaller than 500x500 px
+        root.minsize(640, 480) # main window can not be smaller than 500x500 px
         
         # Set main window size to 60% of the screen size
         width = root.winfo_screenwidth() * .6
