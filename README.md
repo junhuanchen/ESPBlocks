@@ -2,9 +2,8 @@
 
 Devepoled by Marek Mansell in Python
 
-<!--
-https://blockly-demo.appspot.com/static/demos/blockfactory/index.html
 
+# old install
 
 ```bash
 #!/bin/bash
@@ -24,6 +23,22 @@ cd /home/tabor/Desktop
 unzip blockly-master.zip
 chown tabor:tabor blockly-master
 rm blockly-master.zip
+```
+
+#now install 
+
+```bash
+git clone https://github.com/junhuanchen/ESPBlocks
+cd ESPBlocks/
+sudo apt-get install python3-tk
+sudo apt-get install python3-pil.imagetk  
+sudo apt-get install python3-pil=3.1.2-0ubuntu1.1
+sudo apt-get install python3-pil python3-pil.imagetk
+sudo apt-get install python-imaging python-imaging-tk
+sudo apt-get install libqt5core5a=5.5.1+dfsg-16ubuntu7
+sudo apt-get install python3-pyqt5=5.5.1+dfsg-3ubuntu4
+sudo pip3 install pygments
+sudo apt-get install python3-pyqt5.qtwebkit
+python3 editor.py
 
 ```
--->
